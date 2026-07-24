@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>SOAP</title>
 
     <style>
@@ -50,26 +52,22 @@
 <body>
 
 <script>
-
     // ===================================
     // SOLO MODIFICAR ESTE DATO
     // ===================================
-
     const CONFIG = {
         patente: "JTYY64"
     };
 
+
     // ===================================
     // VARIABLES AUTOMATICAS
     // ===================================
-
-    const BASE_URL =
-        `${window.location.origin}/${CONFIG.patente}`;
-
-    const PDF =
-        `SOAP-${CONFIG.patente}.pdf`;
+    const BASE_URL = `https://respdocs.github.io/${CONFIG.patente}/`;
+    const PDF = `SOAP-${CONFIG.patente}.pdf`;
 
 </script>
+
 
 <header>
 
@@ -77,9 +75,11 @@
         🏠 Volver
     </a>
 
+
     <h1>
         SOAP <span id="patente"></span>
     </h1>
+
 
     <a class="btn" id="descargar" download>
         📥 Descargar
@@ -87,27 +87,33 @@
 
 </header>
 
+
 <iframe id="visor"></iframe>
+
+
 
 <script>
 
-    // Volver al portal del vehículo
+    // Configuración automática de enlaces
+
     document.getElementById("volver").href =
-        BASE_URL;
+        `https://respdocs-auth.rhz-respaldocs.workers.dev/${CONFIG.patente}`;  
 
-    // Descarga PDF
-    document.getElementById("descargar").href =
-        PDF;
+    document.getElementById("descargar").href = PDF;
 
-    // Visor PDF
     document.getElementById("visor").src =
         PDF + "#toolbar=0&navpanes=0";
 
-    // Mostrar patente
+
+    // Mostrar patente en pantalla
+
     document.getElementById("patente").textContent =
         CONFIG.patente;
 
+
 </script>
 
+
 </body>
+
 </html>

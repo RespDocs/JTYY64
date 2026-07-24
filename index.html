@@ -237,7 +237,7 @@ function crearTarjeta(doc){
         document.createElement("a");
 
     card.href =
-        BASE_URL + doc.archivo;
+        `https://respdocs-auth.rhz-respaldocs.workers.dev/${CONFIG.patente}/${doc.archivo}`;
 
     if(doc.vence){
 
